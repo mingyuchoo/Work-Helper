@@ -66,3 +66,16 @@ dist\WorkHelper\
   각 메서드는 `{"ok": true, ...}` 또는 `{"ok": false, "error": "..."}` 형태의 dict 반환.
 - 진단 로그: 실행 시마다 `%TEMP%\WorkHelper.log`. (개인정보 보호를 위해 API 인자 '값'은 기록하지 않고 개수만 남김)
   개발자도구가 필요하면 `set APP_DEBUG=1` 후 실행 → 창에서 우클릭→검사.
+
+## Codex / Claude Code Skill
+
+공용 Skill은 [`skill/work-helper/SKILL.md`](skill/work-helper/SKILL.md)에 있습니다.
+엑셀 취합, 수신·참조 목록 생성, 폴더 미리보기 및 생성을 기존 `backend/`로 실행합니다.
+사용법, 의존성, 자동 발견 위치는 해당 파일을 참고하세요. `skill/` 경로를 직접 지정해
+사용할 수 있으며, 기본 자동 발견을 위한 설치는 별도로 필요합니다.
+
+```shell
+python -m pip install -r skill/work-helper/requirements.txt
+python skill/work-helper/scripts/work_helper.py --help
+python skill/work-helper/scripts/test_work_helper.py
+```
